@@ -1,0 +1,56 @@
+<div class = "main_page">
+    <div class = "form-outline d-flex justify-content-center">
+        <form [formGroup]="searchForm" (ngSubmit)="searchFlight()" >
+            <table >
+                <tr style="height: 75px;">
+                    <td style = "font-size: medium; font-family: sans-serif; border-right: 20px solid white;">
+                        Source city
+                    </td>
+                    <td>
+                        <input type = "text" id="form12" class="form-control" placeholder="From" formControlName="fromPlace" >
+                    </td>
+                </tr>
+                <tr style="height: 65px;">
+                    <td style = "font-size: medium; font-family: sans-serif; border-right: 20px solid white;">
+                        Destination city        
+                    </td>
+                    <td>
+                        <input type = "text" id="form12" class="form-control" placeholder="To" formControlName="toPlace" >
+                    </td>
+                </tr>
+                <tr  style="height: 65px;">
+                    <td></td>
+                    <td >
+                        <button type="submit" class="btn btn-info">Search</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <div [ngClass]="className" style="margin-top: 50px;" >
+        <table class="table table-hover">
+            <tr>
+                <th>S.No</th>
+                <th>FlightNumber</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure </th>
+                <th>Arrival </th>
+                <th>Ticket cost</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let flight of flights;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{flight.flightNumber}}</td>
+                <td>{{flight.fromPlace}}</td>
+                <td>{{flight.toPlace}}</td>
+                <td>{{flight.startDateTime}}</td>
+                <td>{{flight.endDateTime}}</td>
+                <td>{{flight.ticketCost}}</td>
+                <td><button><a  routerLink="booking/{{flight.flightNumber}}" >Book</a></button></td>
+              </tr>
+        </table>
+    </div>
+    </div>
+    

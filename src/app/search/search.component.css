@@ -1,0 +1,17 @@
+.viewit{
+    display : block
+}
+
+.hideit{
+    display:none
+}
+
+.main_page{
+    margin: 30px;
+}
+
+td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+

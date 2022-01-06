@@ -1,0 +1,51 @@
+<div class = "booking_form form-outline d-flex justify-content-center">
+    <form [formGroup]="bookingForm" (ngSubmit)="createBooking()">
+    <table>
+        <tr>
+            <td>Flight Number :</td>
+            <td><input type="text" formControlName = "flightNumber" readonly/></td>
+        </tr>
+        <tr>
+            <td>Name* :</td> 
+            <td><input type="text" formControlName = "name" placeholder="Enter the name "/></td>
+        </tr>
+        <tr>
+            <td>Email Id* :</td> 
+            <td><input type="text" formControlName = "emailId" placeholder="Enter the Email Id here "/></td>
+        </tr>
+        <tr>
+            <td>Gender* :</td> 
+            <td>
+                <input type="radio" formControlName = "gender" value = Male/>Male
+                <input type="radio" formControlName = "gender" value = Female />Female
+            </td>
+        </tr>
+        <tr>
+            <td>Age* :</td> 
+            <td><input type="number" formControlName = "age" placeholder="Enter the Age here "/></td>
+        </tr>
+        <tr>
+            <td>Number of passenger* :</td> 
+            <td><input type="number" formControlName = "noOfPassenger" placeholder="Enter the total number of passengers"/></td>
+        </tr>
+        <tr>
+            <td>Do you need meal?*</td> 
+            <td>
+                <input type="radio" formControlName = "isMeal" value = true/>Yes
+                <input type="radio" formControlName = "isMeal" value = false />No
+            </td>
+        </tr>
+        <tr>
+            <td>is the meal Veg?*</td> 
+            <td>
+                <input type="radio" formControlName = "isVeg" value = true />Yes
+                <input type="radio" formControlName = "isVeg" value = false />No
+            </td>            
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btn btn-info" type = "submit" name="Book">Book flight</button></td>
+        </tr>
+    </table>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+.hideit{
+    display : none;
+}
+.viewit{
+    display : block;
+}
+
+td{
+    font-size: medium; 
+    font-family: sans-serif; 
+   
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
