@@ -1,0 +1,51 @@
+<div class = "login_page">
+    <div class = "form-outline d-flex justify-content-center">
+        <form [formGroup]="loginForm" (ngSubmit)="authenticateUser()" >
+            <table >
+                <tr style="height: 75px;">
+                    <td style = "font-size: medium; font-family: sans-serif; border-right: 20px solid white;">
+                        Username
+                    </td>
+                    <td>
+                        <input type = "text" id="form12" class="form-control" placeholder="Username" formControlName="username" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <span class="error" style = "color: red;" *ngIf="loginForm.controls['username'].dirty && loginForm.controls['username'].errors!=null">
+                            <span *ngIf="loginForm.controls['username'].errors['required']">Username is not valid</span>
+                            <br/>
+                        </span>
+                    </td>
+                    
+                </tr>
+                <tr style="height: 65px;">
+                    <td style = "font-size: medium; font-family: sans-serif; border-right: 20px solid white;">
+                        Password        
+                    </td>
+                    <td>
+                        <input type = "password" id="form12" class="form-control" placeholder="Password" formControlName="password" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <span class="error" style = "color: red;" *ngIf="loginForm.controls['password'].dirty && loginForm.controls['password'].errors!=null">
+                            <span *ngIf="loginForm.controls['password'].errors['required']">Password is not valid</span>
+                            <br/>
+                        </span>
+                    </td>
+                </tr>
+                <tr  style="height: 65px;">
+                    <td></td>
+                    <td >
+                        <input type="submit" class="btn btn-info" value = "Login">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -13,11 +13,13 @@ import { RouterModule, Routes } from "@angular/router";
 import { TicketComponent } from './ticket/ticket.component';
 import { SearchComponent } from './search/search.component';
 import { BookingComponent } from './booking/booking.component';
+import { AddHeaderInterceptor } from './admin/AddHeaderInterceptor';
 
 const routes:Routes = [
   {path: "viewticket", component: TicketComponent},
   {path: "searchflight", component: SearchComponent},
   {path: "searchflight/booking/:flightNo", component: BookingComponent},
+  {path: "admin", loadChildren:()=>import("./admin/admin.module").then(u=>u.AdminModule)},
   {path: "**", redirectTo: "searchflight"}
 ]
 
@@ -42,7 +44,12 @@ const routes:Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ { provide: APP_BASE_HREF, useValue: '/' + (window.location.pathname.split('/')[1] || '') }],
+  providers: [ { provide: APP_BASE_HREF, useValue: '/' + (window.location.pathname.split('/')[1] || '') },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AddHeaderInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 

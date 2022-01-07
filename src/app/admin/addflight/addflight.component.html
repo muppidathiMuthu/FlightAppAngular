@@ -1,0 +1,57 @@
+<div class = "booking_form form-outline d-flex justify-content-center">
+    <form  [formGroup]="flightForm" (ngSubmit)="addFlight()">
+    <table>
+        <tr>
+            <td>Flight Number :</td>
+            <td><input type="text" formControlName = "flightNumber" /></td>
+        </tr>
+        <tr>
+            <td>From Place* :</td> 
+            <td><input type="text" formControlName = "fromPlace" /></td>
+        </tr>
+        <tr>
+            <td>To Place* :</td> 
+            <td><input type="text" formControlName = "toPlace" /></td>
+        </tr>
+        <tr>
+            <td>start Date Time* :</td> 
+            <td><input type="text" formControlName = "startDateTime" /></td>
+        </tr>
+        <tr>
+            <td>end Date Time* :</td> 
+            <td><input type="text" formControlName = "endDateTime" /></td>
+        </tr>
+        <tr>
+            <td>Scheduled Days* :</td> 
+            <td><input type="text" formControlName = "scheduledDays" /></td>
+        </tr>
+
+        <tr>
+            <td>Instrument* :</td> 
+            <td><input type="text" formControlName = "instrument"/></td>
+        </tr>
+
+        <tr>
+            <td>Business seats* :</td> 
+            <td><input type="text" formControlName = "businessSeats" /></td>
+        </tr>
+
+        <tr>
+            <td>non Business seats* :</td> 
+            <td><input type="text" formControlName = "nonBusinessSeats"/></td>
+        </tr>
+
+        <tr>
+            <td>Ticket cost* :</td> 
+            <td><input type="text" formControlName = "ticketCost"/></td>
+        </tr>
+
+        <tr>
+            <td>Airline Id* : </td> 
+            <td><input type="text" formControlName = "airlineId" /></td>
+        </tr>
+
+        
+    </table>
+    </form>
+</div>
