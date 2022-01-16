@@ -1,0 +1,25 @@
+<div class = "booking_form form-outline d-flex justify-content-center">
+    <form  [formGroup]="airlineForm" >
+    <table>
+        <tr>
+            <td>Airline Number :</td>
+            <td><input type="text" formControlName = "airlineName" /></td>
+        </tr>
+        <tr>
+            <td>Airline contact :</td> 
+            <td><input type="text" formControlName = "airlineContact" /></td>
+        </tr>
+        <tr>
+            <td>Airline address :</td> 
+            <td><input type="text" formControlName = "airlineAddress" /></td>
+        </tr>
+        <tr>
+            <td></td>
+
+            <td><button btn btn-primary active (click)="addAirline()">
+                Submit</button></td>
+        </tr>
+        
+    </table>
+    </form>
+</div>

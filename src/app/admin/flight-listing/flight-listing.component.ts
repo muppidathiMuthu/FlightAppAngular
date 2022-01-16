@@ -29,6 +29,9 @@ export class FlightListingComponent implements OnInit {
   addFlights(){
     this.router.navigateByUrl("/admin/addflight")
   }
+
+  
+   
   
 
 }

@@ -1,11 +1,36 @@
-<nav class="navbar navbar-default bg-info">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li ><a routerLink="flightlisting">Flights</a></li>
-        <li class="active"><a routerLink="airlineListing">Airline</a></li>
+<nav class="navbar navbar-expand-lg navbar-light">
+    
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto topnav">
+          <li class="nav-item active">
+              <a class="nav-link" routerLink="/admin/flightlisting"> Flights </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/airlinelisting"> Airline </a>
+          </li>
       </ul>
-    </div>
-  </nav>
-  <div style="float: right;">
-    <button class="btn btn-primary active"><i class="icon-white icon-plus"></i> Add</button>
   </div>
+</nav>
+<div style="float: right; margin: 20px;">
+  <button class="btn btn-primary active" (click)="addAirline()"><i class="icon-white icon-plus"></i> Add airline </button>
+</div>
+  <div [ngClass]="className" style="margin: 20px;" >
+    <table class="table table-hover">
+        <tr>
+            <th>S.No</th>
+            <th>Airline Id</th>
+            <th>Airline name</th>
+            <th>Airline contact</th>
+            <th>Airline address </th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let airline of airlines;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{airline.id}}</td>
+            <td>{{airline.airlineName}}</td>
+            <td>{{airline.airlineContact}}</td>
+            <td>{{airline.airlineAddress}}</td>
+            <td><button (click)="blockAirline(airline.id,i)">Cancel</button></td>
+          </tr>
+    </table>
+    </div>

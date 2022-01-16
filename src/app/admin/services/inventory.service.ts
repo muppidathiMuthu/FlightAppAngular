@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Flight } from 'src/app/model/flight';
@@ -31,4 +31,18 @@ export class InventoryService {
   addFlight(flight:Flight){
     return this.httpClient.post(this.url+"api/inventory/flight", flight );
   }
+
+  addAirline(flight:Flight){
+    return this.httpClient.post(this.url+"api/inventory/airline", flight );
+  }
+
+  getAllAirlines(){
+    return this.httpClient.get(this.url+"api/inventory/airline")
+  }
+
+  blockAirline(airlineId:string){
+    let params = new HttpParams();
+    params = params.append('id', airlineId);
+    return this.httpClient.put(this.url+"api/inventory/airline/"+airlineId,{});
+   }
 }

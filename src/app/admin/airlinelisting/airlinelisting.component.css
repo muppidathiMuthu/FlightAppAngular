@@ -1,0 +1,13 @@
+td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.viewit{
+    display : block
+}
+
+.hideit{
+    display:none
+}

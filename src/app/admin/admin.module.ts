@@ -10,6 +10,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddHeaderInterceptor } from './AddHeaderInterceptor';
 import { AirlinelistingComponent } from './airlinelisting/airlinelisting.component';
 import { AddflightComponent } from './addflight/addflight.component';
+import { AddairlineComponent } from './addairline/addairline.component';
 
 
 
@@ -18,6 +19,7 @@ const routes:Routes = [
   {path: "flightlisting", component : FlightListingComponent},
   {path: "airlinelisting", component : AirlinelistingComponent},
   {path: "addflight", component : AddflightComponent},
+  {path: "addairline", component : AddairlineComponent},
   {path: "**", redirectTo: "login"}
 ]
 
@@ -27,7 +29,8 @@ const routes:Routes = [
     AdminComponent,
     FlightListingComponent,
     AirlinelistingComponent,
-    AddflightComponent
+    AddflightComponent,
+    AddairlineComponent
   ],
   imports: [
     CommonModule,

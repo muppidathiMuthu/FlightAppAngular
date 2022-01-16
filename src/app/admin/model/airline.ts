@@ -1,6 +1,6 @@
 export class Airline{
     constructor(
-        public airlineId:string,
+        public id:string,
         public airlineName:string,
         public airlineContact:string,
         public airlineAddress:string
