@@ -9,7 +9,7 @@ import { User } from '../model/user';
 })
 export class InventoryService {
 
-  private url:string = "http://localhost:8989/inventory/";
+  private url:string = "http://ec2-13-232-122-12.ap-south-1.compute.amazonaws.com:8989/inventory/";
   constructor(private httpClient:HttpClient, private toastr:ToastrService) { }
 
   authenticateUser(user:User){

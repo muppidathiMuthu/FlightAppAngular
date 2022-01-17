@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class FlightService {
 
    
-  private url:string = "http://localhost:8989/booking/api/booking/";
+  private url:string = "http://ec2-13-232-122-12.ap-south-1.compute.amazonaws.com:8989/booking/api/booking/";
 
   constructor(private httpClient:HttpClient, private toastr:ToastrService) { }
 
